@@ -9,7 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 import { MovieComponent } from './components/movie/movie.component';
 
-import { MovieService } from './services/movie.service'
+import { MovieService } from './services/movie.service';
 
 @NgModule({
   declarations: [

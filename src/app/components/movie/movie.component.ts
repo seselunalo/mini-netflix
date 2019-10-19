@@ -1,5 +1,6 @@
 import { Component, OnInit , Input} from '@angular/core';
 import { Movie } from 'src/app/models/movie.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie',
@@ -9,10 +10,13 @@ import { Movie } from 'src/app/models/movie.model';
 export class MovieComponent implements OnInit {
 
   @Input() movie: Movie;
-  constructor() { }
+  constructor(private router: Router) { }
 
 
   ngOnInit() {
+  }
+  onSelect(movie) {
+    this.router.navigate(['/movies', movie.id]);
   }
 
 }
