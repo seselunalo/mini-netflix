@@ -1,0 +1,32 @@
+.card{
+  position: relative;
+  border-color: transparent;
+  transition: all 1s linear;
+  width: 9rem
+}
+
+.card:hover{
+  border: 0.04rem solid rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 5px 0px(0,0,0,0.2)
+}
+.img-container{
+  position: relative;
+  overflow: hidden;
+
+}
+.card-img-top{
+  transition: all 1s linear;
+}
+
+.movie-title{
+
+  background-image: linear-gradient(transparent,grey);
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width:100%;
+  text-align: center;
+}
+.img-container:hover .card-img-top{
+  transform: scale(1.2);
+}
