@@ -10,6 +10,8 @@ import { MovieDetailComponent } from './components/movie-detail/movie-detail.com
 import { MovieComponent } from './components/movie/movie.component';
 
 import { MovieService } from './services/movie.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MovieFilterPipe } from './pipes/movie-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,14 @@ import { MovieService } from './services/movie.service';
     MoviesComponent,
     FooterComponent,
     MovieDetailComponent,
-    MovieComponent
+    MovieComponent,
+    MovieFilterPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ MovieService ],
   bootstrap: [AppComponent]
