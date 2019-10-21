@@ -183,8 +183,8 @@ export class MovieService {
     loadedFavs.push(movie.id);
     localStorage.setItem('favmovies', JSON.stringify(loadedFavs));
   }
-  getFavourite(): Movie[]{
-    const data = this.getStoredFavs();
+  getFavourite(): Movie[] {
+    const data = [...new Set(this.getStoredFavs())];
     const favMovies: Movie[] = [];
     if (data.length > 0) {
       data.forEach(id => {
