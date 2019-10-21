@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Movie } from '../models/movie.model';
+import { MoviesComponent } from '../components/movies/movies.component';
 
 @Injectable({
   providedIn: 'root'
@@ -175,5 +176,26 @@ export class MovieService {
   }
   getMovie(id: number) {
     return this.movies.find(movie => movie.id === id);
+  }
+  addFavourite(movie: Movie) {
+    const loadedFavs = this.getStoredFavs();
+    console.log(loadedFavs);
+    loadedFavs.push(movie.id);
+    localStorage.setItem('favmovies', JSON.stringify(loadedFavs));
+  }
+  getFavourite(): Movie[]{
+    const data = this.getStoredFavs();
+    const favMovies: Movie[] = [];
+    if (data.length > 0) {
+      data.forEach(id => {
+        // tslint:disable-next-line: radix
+        favMovies.push (this.movies.find(movie => movie.id === parseInt(id)));
+      });
+    }
+    return favMovies;
+  }
+  private getStoredFavs(): any[] {
+    const data =  JSON.parse(localStorage.getItem('favmovies'));
+    return !data ? [] : data;
   }
 }

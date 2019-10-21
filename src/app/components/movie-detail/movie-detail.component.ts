@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class MovieDetailComponent implements OnInit {
   movie: Movie;
   detailId: any;
+  favMovie : Movie;
 
   constructor(
     private route: ActivatedRoute,
@@ -21,5 +22,9 @@ export class MovieDetailComponent implements OnInit {
     this.detailId = this.route.snapshot.paramMap.get('id');
     // tslint:disable-next-line: radix
     this.movie = this.movieService.getMovie(parseInt(this.detailId));
+  }
+
+  addToFavourites(movie: Movie) {
+    this.movieService.addFavourite(movie);
   }
 }

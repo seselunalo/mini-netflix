@@ -1,0 +1,26 @@
+<div class="container">
+
+
+  <div *ngIf="!movies"> <h1>You do not have favourites</h1> </div>
+  <div *ngIf="movies">
+      <div class="form-inline ml-auto formgroup">
+          <input
+            type="text"
+            class="form-control mr-sm-2"
+            placeholder="Search by movie title"
+            [(ngModel)]="searchTerm"
+          />
+        </div>
+        <div class="row">
+
+          <app-movie
+            *ngFor="let movie of movies | movieFilter: searchTerm"
+            [movie]="movie"
+          ></app-movie>
+
+        </div>
+  </div>
+
+
+</div>
+

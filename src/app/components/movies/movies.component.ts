@@ -10,6 +10,7 @@ import { Movie } from 'src/app/models/movie.model';
 export class MoviesComponent implements OnInit {
 
   movies: Movie[];
+  searchTerm: string;
 
   constructor(private movieService: MovieService) {}
 

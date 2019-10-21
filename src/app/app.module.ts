@@ -12,6 +12,7 @@ import { MovieComponent } from './components/movie/movie.component';
 import { MovieService } from './services/movie.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MovieFilterPipe } from './pipes/movie-filter.pipe';
+import { FavouriteComponent } from './components/favourite/favourite.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MovieFilterPipe } from './pipes/movie-filter.pipe';
     FooterComponent,
     MovieDetailComponent,
     MovieComponent,
-    MovieFilterPipe
+    MovieFilterPipe,
+    FavouriteComponent
   ],
   imports: [
     BrowserModule,
