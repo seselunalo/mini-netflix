@@ -13,8 +13,10 @@
 
     <div class="collapse navbar-collapse" id="navbarCollapse1">
         <div class="navbar-nav">
-            <a href="#" class="nav-item nav-link active">All Movies</a>
-            <a href="#" class="nav-item nav-link">Favourite Movies</a>
+            <a [routerLink]="'/movies'" routerLinkActive="router-link-active"  class="nav-item nav-link">All Movies</a>
+
+            <a [routerLink]="'/favourite'" routerLinkActive="router-link-active" class="nav-item nav-link">Favourite Movies</a>
+
         </div>
 
     </div>
